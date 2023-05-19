@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Gradient Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gradient1: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        --gradient2: linear-gradient(
+          109.6deg,
+          rgba(62, 161, 219, 1) 11.2%,
+          rgba(93, 52, 236, 1) 100.2%
+        );
+      }
+
+      body {
+        min-height: 100vh;
+        background-color: #eaeaea;
+        background-image: var(--gradient1);
+        background-size: 200%;
+        animation: gradient-animation 25s infinite alternate;
+        display: flex;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: left;
+        }
+
+        100% {
+          background-position: right;
+        }
+      }
+
+      h1 {
+        font-size: 7rem;
+        margin: auto;
+        font-family: "Open Sans", sans-serif;
+        font-family: "Pacifico", cursive;
+        background-size: 200%;
+        background-image: var(--gradient2);
+        -webkit-background-clip: text;
+        color: transparent;
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7));
+      }
+      h1:hover {
+        cursor: pointer;
+        animation: gradient-animation 5s infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mahya Madelta.</h1>
+  </body>
+</html>
